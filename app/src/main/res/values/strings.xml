@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MemoryCollector</string>
+    <string name="facebook_app_id">456558055632182</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">Description</string>
+    <string name="name">Name</string>
+    <string name="set_location">Set Location</string>
+    <string name="save_memory">Save Memory</string>
+    <string name="save">Save</string>
+    <string name="share">Share</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_memory_title">Delete Memory</string>
+    <string name="delete_memory_description">Delete this memory?</string>
+    <string name="memory_delete_success">Memory was successfully deleted</string>
+
+</resources>

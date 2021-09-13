@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cameraFragment">
+    <fragment
+        android:id="@+id/viewMemoryFragment"
+        android:name="com.example.memorycollector.screens.ViewMemoryFragment"
+        android:label="Memory"
+        tools:layout="@layout/fragment_view_memory">
+        <action
+            android:id="@+id/action_viewMemoryFragment_to_viewMemoryListFragment"
+            app:destination="@id/viewMemoryListFragment" />
+        <action
+            android:id="@+id/action_viewMemoryFragment_to_editMemoryFragment"
+            app:destination="@id/editMemoryFragment" />
+        <action
+            android:id="@+id/action_viewMemoryFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_viewMemoryFragment_to_viewMemoryMapFragment"
+            app:destination="@id/viewMemoryMapFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_viewMemoryFragment_to_displayImage"
+            app:destination="@id/displayImage" />
+        <action
+            android:id="@+id/action_viewMemoryFragment_to_displayImage2"
+            app:destination="@id/displayImage" />
+    </fragment>
+    <fragment
+        android:id="@+id/createMemoryFragment"
+        android:name="com.example.memorycollector.screens.createMemoryFragment"
+        android:label="fragment_create_memory"
+        tools:layout="@layout/fragment_create_memory">
+        <action
+            android:id="@+id/action_createMemoryFragment_to_setMemoryLocationFragment"
+            app:destination="@id/setMemoryLocationFragment" />
+        <action
+            android:id="@+id/action_createMemoryFragment_to_viewMemoryListFragment"
+            app:destination="@id/viewMemoryListFragment" />
+        <argument android:name="mediaOutputUri" />
+        <action
+            android:id="@+id/action_createMemoryFragment_to_displayImage"
+            app:destination="@id/displayImage" />
+        <argument android:name="name" />
+        <argument android:name="description" />
+        <argument android:name="latitude" />
+        <argument android:name="longitude" />
+        <argument android:name="dateString" />
+        <argument android:name="timeString" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewMemoryListFragment"
+        android:name="com.example.memorycollector.screens.ViewMemoryListFragment"
+        android:label="Memories"
+        tools:layout="@layout/fragment_view_memory_list">
+        <action
+            android:id="@+id/action_viewMemoryListFragment_to_viewMemoryFragment"
+            app:destination="@id/viewMemoryFragment" />
+        <action
+            android:id="@+id/action_viewMemoryListFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <argument
+            android:name="memoryIds"
+            app:argType="integer[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewMemoryMapFragment"
+        android:name="com.example.memorycollector.screens.ViewMemoryMapFragment"
+        android:label="Memory Map"
+        tools:layout="@layout/fragment_view_memory_map">
+        <action
+            android:id="@+id/action_viewMemoryMapFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_viewMemoryMapFragment_to_viewMemoryListFragment"
+            app:destination="@id/viewMemoryListFragment" />
+        <action
+            android:id="@+id/action_viewMemoryMapFragment_to_viewMemoryFragment"
+            app:destination="@id/viewMemoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editMemoryFragment"
+        android:name="com.example.memorycollector.screens.editMemoryFragment"
+        android:label="fragment_edit_memory"
+        tools:layout="@layout/fragment_edit_memory" >
+        <action
+            android:id="@+id/action_editMemoryFragment_to_viewMemoryFragment"
+            app:destination="@id/viewMemoryFragment" />
+        <action
+            android:id="@+id/action_editMemoryFragment_to_setMemoryLocationFragment"
+            app:destination="@id/setMemoryLocationFragment" />
+        <action
+            android:id="@+id/action_editMemoryFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_editMemoryFragment_to_viewMemoryListFragment"
+            app:destination="@id/viewMemoryListFragment" />
+        <action
+            android:id="@+id/action_editMemoryFragment_to_viewMemoryListFragment2"
+            app:destination="@id/viewMemoryListFragment" />
+        <action
+            android:id="@+id/action_editMemoryFragment_to_viewMemoryMapFragment"
+            app:destination="@id/viewMemoryMapFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_editMemoryFragment_to_displayImage"
+            app:destination="@id/displayImage" />
+    </fragment>
+    <fragment
+        android:id="@+id/setMemoryLocationFragment"
+        android:name="com.example.memorycollector.screens.setMemoryLocationFragment"
+        android:label="fragment_set_memory_location"
+        tools:layout="@layout/fragment_set_memory_location" >
+        <action
+            android:id="@+id/action_setMemoryLocationFragment_to_editMemoryFragment"
+            app:destination="@id/editMemoryFragment" />
+        <action
+            android:id="@+id/action_setMemoryLocationFragment_to_createMemoryFragment"
+            app:destination="@id/createMemoryFragment" />
+        <action
+            android:id="@+id/action_setMemoryLocationFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_setMemoryLocationFragment_to_viewMemoryListFragment"
+            app:destination="@id/viewMemoryListFragment" />
+        <action
+            android:id="@+id/action_setMemoryLocationFragment_to_viewMemoryMapFragment"
+            app:destination="@id/viewMemoryMapFragment" />
+        <argument android:name="name" />
+        <argument android:name="description" />
+        <argument android:name="longitude" />
+        <argument android:name="latitude" />
+        <argument android:name="mediaOutputUri" />
+        <argument android:name="dateString" />
+        <argument android:name="timeString" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.memorycollector.screens.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" >
+        <action
+            android:id="@+id/action_cameraFragment_to_createMemoryFragment"
+            app:destination="@id/createMemoryFragment" />
+        <action
+            android:id="@+id/action_cameraFragment_to_viewMemoryMapFragment"
+            app:destination="@id/viewMemoryMapFragment" />
+        <action
+            android:id="@+id/action_cameraFragment_to_viewMemoryListFragment"
+            app:destination="@id/viewMemoryListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayImage"
+        android:name="com.example.memorycollector.screens.DisplayImage"
+        android:label="fragment_display_image"
+        tools:layout="@layout/fragment_display_image">
+        <argument android:name="mediaOutputUri" />
+    </fragment>
+</navigation>

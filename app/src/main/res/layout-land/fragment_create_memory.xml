@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.createMemoryFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/frameLayout"
+            android:layout_width="253dp"
+            android:layout_height="232dp"
+            android:layout_marginStart="69dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <EditText
+            android:id="@+id/memoryNameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="65dp"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/memoryDescriptionInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/memoryDescriptionInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="65dp"
+            android:ems="10"
+            android:hint="@string/description"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/setLocationButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/memoryNameInput" />
+
+        <Button
+            android:id="@+id/setLocationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="100dp"
+            android:text="@string/set_location"
+            app:layout_constraintBottom_toTopOf="@+id/saveMemoryButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/memoryDescriptionInput" />
+
+        <Button
+            android:id="@+id/saveMemoryButton"
+            android:layout_width="180dp"
+            android:layout_height="74dp"
+            android:layout_marginEnd="82dp"
+            android:text="@string/save_memory"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setLocationButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
